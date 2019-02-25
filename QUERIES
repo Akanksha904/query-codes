@@ -1,0 +1,22 @@
+1.	LIMIT:
+SELECT * FROM `bigquery-public-data.austin_crime.crime` LIMIT 1000
+2.	WHERE:
+SELECT * FROM `bigquery-public-data.austin_crime.crime` WHERE clearance_status= "Not cleared"
+3.	COUNT and DINTINCT:
+SELECT COUNT(DISTINCT(country_name)) FROM `bigquery-public-data.world_bank_intl_education.international_education`
+RESULT: 242. 
+Question: how many countries are there in the table?
+4.	RETRIEVING CONTENT: SELECT:
+SELECT * FROM `bigquery-public-data.world_bank_health_population.country_series_definitions`WHERE country_code = "FRA"
+5.	MAX(), GROUP BY and ORDER BY:
+SELECT country_name, MAX(value) AS MAX_VALUE FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` GROUP BY country_name ORDER BY MAX_VALUE DESC
+6.	AND:
+SELECT country_name, year FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` WHERE country_name= "Denmark" and year= 2018.
+7.	AS:
+SELECT topic AS status FROM `bigquery-public-data.world_bank_intl_education.series_summary`
+8.	AVERAGE:
+SELECT AVG(second_in_day) FROM `bigquery-public-data.utility_eu.time` 
+9.	MIN()
+SELECT MIN(value) FROM `bigquery-public-data.world_bank_intl_debt.international_debt`
+10.	SUM:
+SELECT SUM(unique_key) FROM `bigquery-public-data.new_york_311.311_service_requests`
